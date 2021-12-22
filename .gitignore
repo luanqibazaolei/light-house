@@ -1,0 +1,4 @@
+# Project exclude paths
+/light-common/target/
+/light-show/target/
+.idea
