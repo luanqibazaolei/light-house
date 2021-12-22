@@ -1,0 +1,15 @@
+
+spring:
+  application:
+    name: nacos-config
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 81.69.1.78:8848
+      config:
+        server-addr: 81.69.1.78:8848
+        file-extension: yaml
+        extension-configs[0]:
+          data-id: mysql.yaml
+server:
+  port: 8089
