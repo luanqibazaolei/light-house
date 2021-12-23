@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.light.mng.mapper.UserInfoMapper">
+
+    <resultMap id="userRoleMap" type="com.light.mng.entity.dto.UserDto">
+        <id property="uid" column="uid"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <collection property="roles" ofType="com.light.mng.entity.Role">
+            <id property="rid" column="rid"/>
+            <result property="role" column="role"></result>
+        </collection>
+    </resultMap>
+
+    <select id="selectUserByUsername" resultMap="userRoleMap">
+        select `user`.uid, `user`.username, `user`.password, `role`.rid, `role`.role
+        from `user`, `user_role`, `role`
+        where `user`.username=#{username}
+          and `user`.uid = user_role.uid
+          and `user_role`.rid = `role`.rid
+    </select>
+
+</mapper>

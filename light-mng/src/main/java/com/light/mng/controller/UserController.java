@@ -1,0 +1,29 @@
+package com.light.mng.controller;
+
+import com.light.mng.entity.dto.UserDto;
+import com.light.mng.service.UserInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+public class UserController {
+    @Autowired
+    private UserInfoService userInfoService;
+
+    @GetMapping("/get-user")
+    public UserDto getUser(@RequestParam String username){
+        return userInfoService.loadUserByUsername(username);
+    }
+
+    /**
+     * 查看登录用户信息
+     */
+    @GetMapping("/get-auth")
+    public Authentication getAuth(){
+        return SecurityContextHolder.getContext().getAuthentication();
+    }
+}
+
+
