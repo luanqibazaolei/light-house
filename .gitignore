@@ -1,4 +1,7 @@
 # Project exclude paths
 /light-common/target/
 /light-show/target/
+/light-mng/target/
+/CodeGenerator/target/
 .idea
+/CodeGenerator/CodeGenerator.iml

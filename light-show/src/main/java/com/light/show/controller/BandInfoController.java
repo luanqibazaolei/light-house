@@ -7,9 +7,7 @@ import com.light.mng.utils.domain.ModelResult;
 import com.light.mng.utils.domain.Result;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.light.show.entity.BandInfo;
-import com.light.show.mapper.BandInfoMapper;
 import com.light.show.service.IBandInfoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -19,8 +17,8 @@ import java.util.List;
 /**
  * 乐队信息表(BandInfo)表控制层
  *
- * @author makejava
- * @since 2021-12-22 16:12:14
+ * @author shenzl
+ * @since 2021-12-23 11:34:24
  */
 @RestController
 @RequestMapping("bandInfo")
@@ -31,20 +29,16 @@ public class BandInfoController {
     @Resource
     private IBandInfoService bandInfoService;
 
-
     /**
      * 分页查询所有数据
      *
      * @param page 分页对象
-     * @param pageSize 查询实体
+     * @param bandInfo 查询实体
      * @return 所有数据
      */
     @GetMapping
-    public ModelResult<Page<BandInfo>> selectAll(Integer page , Integer pageSize) {
-        Page page1 = new Page(page,pageSize);
-
-
-        return new ModelResult<>(this.bandInfoService.page(page1));
+    public ModelResult<Page<BandInfo>> selectAll(Page<BandInfo> page, BandInfo bandInfo) {
+        return new ModelResult<>(this.bandInfoService.page(page, new QueryWrapper<>(bandInfo)));
     }
 
     /**
@@ -54,7 +48,7 @@ public class BandInfoController {
      * @return 单条数据
      */
     @GetMapping("{id}")
-    public ModelResult<BandInfo> selectOne(@PathVariable("id") Serializable id) {
+    public ModelResult<BandInfo> selectOne(@PathVariable Serializable id) {
         return new ModelResult<BandInfo>(this.bandInfoService.getById(id));
     }
 

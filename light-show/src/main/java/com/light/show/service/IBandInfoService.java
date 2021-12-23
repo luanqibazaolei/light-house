@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author light
- * @since 2021-12-22
+ * @since 2021-12-23
  */
 public interface IBandInfoService extends IService<BandInfo> {
 
