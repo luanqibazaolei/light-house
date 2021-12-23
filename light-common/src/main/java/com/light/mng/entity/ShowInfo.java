@@ -2,6 +2,7 @@ package com.light.mng.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -66,6 +67,7 @@ public class ShowInfo implements Serializable {
     @TableField("DT_UPDATE")
     private LocalDateTime dtUpdate;
 
+    @TableLogic
     @ApiModelProperty(value = "状态")
     @TableField("STATUS")
     private Integer status;
