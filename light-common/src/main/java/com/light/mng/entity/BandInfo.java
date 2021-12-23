@@ -51,8 +51,8 @@ public class BandInfo implements Serializable {
 
     @TableLogic
     @ApiModelProperty(value = "状态")
-    @TableField("STUATS")
-    private String stuats;
+    @TableField("STATUS")
+    private String status;
 
 
 }
