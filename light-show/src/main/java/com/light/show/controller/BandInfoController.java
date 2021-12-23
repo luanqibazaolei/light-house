@@ -3,10 +3,10 @@ package com.light.show.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.light.mng.utils.domain.ModelResult;
 import com.light.mng.utils.domain.Result;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.light.show.entity.BandInfo;
+import com.light.mng.entity.BandInfo;
 import com.light.show.service.IBandInfoService;
 import org.springframework.web.bind.annotation.*;
 

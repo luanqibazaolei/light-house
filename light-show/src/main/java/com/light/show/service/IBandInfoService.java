@@ -1,6 +1,6 @@
 package com.light.show.service;
 
-import com.light.show.entity.BandInfo;
+import com.light.mng.entity.BandInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
