@@ -41,25 +41,35 @@
     </dependencies>
 
 
-    <!-- <build > 主要用于编译设置 -->
-<!--    <build>-->
-<!--        &lt;!&ndash; 定义打包成jar的名字 &ndash;&gt;-->
-<!--        &lt;!&ndash; 这里如果不定义 , 打包成的jar名字格式为 : <artifactId> + <version> &ndash;&gt;-->
-<!--&lt;!&ndash;        <finalName>thymeleaf</finalName>&ndash;&gt;-->
-<!--        <plugins>-->
-<!--            &lt;!&ndash;SpringBoot maven插件&ndash;&gt;-->
-<!--            &lt;!&ndash; 可以将应用打成一个可执行的jar包 &ndash;&gt;-->
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--                &lt;!&ndash; 设置启动入口 &ndash;&gt;-->
-<!--                &lt;!&ndash; manClass即使不配置 , SprinBoot也在打包的时候也清楚入口是哪个 , 其实不用配置 &ndash;&gt;-->
-<!--&lt;!&ndash;                <configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <mainClass>com.bella.ThymeleafApplication</mainClass>&ndash;&gt;-->
-<!--&lt;!&ndash;                </configuration>&ndash;&gt;-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
+    <!--     <build > 主要用于编译设置 -->
+    <build>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+
+            </plugin>
+            <!-- Docker maven plugin -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
 
