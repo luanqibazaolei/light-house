@@ -17,7 +17,6 @@
     <modules>
         <module>light-show</module>
         <module>light-mng</module>
-        <module>light-common</module>
         <module>CodeGenerator</module>
     </modules>
     <properties>
