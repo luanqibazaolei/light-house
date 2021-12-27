@@ -16,6 +16,11 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+
+/**
+ * 实现UserDetailsService
+ * 重写loadUserByUsername方法 并且返回User的信息需要设置密码加密
+ */
 @Service("userDetailsService")
 public class MyUserDetailsService implements UserDetailsService {
 
@@ -43,5 +48,4 @@ public class MyUserDetailsService implements UserDetailsService {
                 grantedAuthorities
         );
     }
-
 }

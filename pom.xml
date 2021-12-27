@@ -31,15 +31,7 @@
 
         <!-- 添加 模板引擎 依赖 -->
 
-
-
-
-
-
-
-
     </dependencies>
-
 
 
     <dependencyManagement>
@@ -66,7 +58,7 @@
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>2.3.12.RELEASE</version>
             </dependency>
-<!--            权限相关-->
+            <!--权限相关-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-security</artifactId>
@@ -78,14 +70,14 @@
                 <version>2.3.8.RELEASE</version>
             </dependency>
 
-            <!--        连接池-->
+            <!--连接池-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
                 <version>1.1.21</version>
             </dependency>
 
-            <!--        Mybatis Plus 相关     -->
+            <!--   Mybatis Plus 相关     -->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus</artifactId>
@@ -102,28 +94,28 @@
                 <version>3.3.1</version>
             </dependency>
 
-<!--            生成模版-->
+            <!--生成模版-->
             <dependency>
                 <groupId>org.apache.velocity</groupId>
                 <artifactId>velocity-engine-core</artifactId>
                 <version>2.2</version>
             </dependency>
-<!--            mysql-->
+            <!--mysql-->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>8.0.25</version>
             </dependency>
 
-<!--            lombok-->
+            <!--lombok-->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>1.18.20</version>
             </dependency>
-<!--            log4j-->
+            <!--log4j-->
 
-<!--            redis-->
+            <!--redis-->
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-redis</artifactId>
@@ -131,7 +123,7 @@
 
             </dependency>
 
-<!--            swagger-->
+            <!--swagger-->
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger2</artifactId>
