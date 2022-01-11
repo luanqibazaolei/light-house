@@ -15,16 +15,7 @@ spring:
 #        extension-configs[2]:
 #          data-id: redis.yaml
 
-dubbo:
-  application:
-    name: consumer-service
-  registry:
-    address: nacos://81.69.1.78:8848
-    username: nacos
-    password: nacos
-  protocol:
-    name: dubbo
-    port: 15511
+
 
 
 
