@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LogAspect {
 
-    @Pointcut(value = "execution(* com.light.mng.controller.*(..))")
+    @Pointcut(value = "execution(* com.light.mng.controller.*.*(..))")
     public void pointcut() {
     }
 
@@ -23,13 +23,13 @@ public class LogAspect {
 
 
     @Around("pointcut()")
-    public void around(ProceedingJoinPoint point) throws Throwable {
+    public Object around(ProceedingJoinPoint point) throws Throwable {
         System.out.println("ANNOTATION welcome");
         System.out.println("ANNOTATION 调用类：" + point.getSignature().getDeclaringTypeName());
         System.out.println("ANNOTATION 调用类名" + point.getSignature().getDeclaringType().getSimpleName());
-        point.proceed(); //调用目标方法
-        System.out.println("ANNOTATION login success");
-
+        Object proceed = point.proceed();//调用目标方法
+        System.out.println("ANNOTATION login success:"+proceed.toString());
+        return proceed;
     }
 
 

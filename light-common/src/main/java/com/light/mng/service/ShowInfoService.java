@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.light.mng.entity.BandInfo;
 import com.light.mng.entity.ShowInfo;
 import com.light.mng.utils.PageInfo;
+import org.springframework.stereotype.Service;
 
 /**
  * <p>

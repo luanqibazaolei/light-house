@@ -11,7 +11,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableFeignClients
 @EnableSwagger2
 @EnableDiscoveryClient
-@ComponentScan("com.light")
 public class MngApplication {
     public static void main(String[] args) {
         SpringApplication.run(MngApplication.class);
