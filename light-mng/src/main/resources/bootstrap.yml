@@ -15,7 +15,16 @@ spring:
 #        extension-configs[2]:
 #          data-id: redis.yaml
 
-
+dubbo:
+  application:
+    name: light-mng
+  registry:
+    address: spring-cloud://81.69.1.78:8848
+  consumer:
+    check: false
+  protocol:
+    name: dubbo
+    port: -1
 
 
 
