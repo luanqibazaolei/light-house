@@ -1,13 +1,17 @@
-package com.light.mng.entity;
+package com.light.mng.entity.dto;
 
+import com.light.mng.entity.dto.UserDto;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-@Data
-public class LoginUser extends UserInfo implements UserDetails {
+@Getter
+@Setter
+public class LoginUser extends UserDto implements UserDetails {
 
     private String token;
 

@@ -1,8 +1,9 @@
 //package com.light.mng.service.impl;
 //
-//import com.light.mng.entity.LoginUser;
+//import com.light.mng.entity.dto.LoginUser;
 //import com.light.mng.entity.Token;
 //import com.light.mng.service.TokenService;
+//import com.light.mng.utils.TokenUtil;
 //import io.jsonwebtoken.ExpiredJwtException;
 //import io.jsonwebtoken.Jwts;
 //import io.jsonwebtoken.SignatureAlgorithm;
@@ -76,9 +77,7 @@
 //        Map<String, Object> claims = new HashMap<>();
 //        claims.put(LOGIN_USER_KEY, loginUser.getToken());
 //        //签发令牌
-//        String jwtToken = Jwts.builder().setClaims(claims)
-//                .signWith(SignatureAlgorithm.HS256, getKeyInstance())
-//                .compact();
+//        String jwtToken = TokenUtil.sign(loginUser.getUid());
 //        return jwtToken;
 //    }
 //

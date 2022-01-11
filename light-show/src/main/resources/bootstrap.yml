@@ -13,3 +13,14 @@ spring:
           data-id: mysql.yaml
 server:
   port: 8089
+
+dubbo:
+  application:
+    name: light-show
+  registry:
+    address: nacos://81.69.1.78:8848
+    username: nacos
+    password: nacos
+  protocol:
+    name: dubbo
+    port: 15512

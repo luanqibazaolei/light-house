@@ -10,7 +10,7 @@ import lombok.Data;
 @ApiModel(value="ShowInfo对象", description="演出表")
 public class UserInfo {
     @TableId("uid")
-    private Integer uid;
+    private Long uid;
     private String username;
     private String password;
 }

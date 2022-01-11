@@ -8,8 +8,10 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /**
@@ -49,7 +51,7 @@ public class BandInfo implements Serializable {
     @TableField("DT_UPDATE")
     private LocalDateTime dtUpdate;
 
-    @TableLogic
+//    @TableLogic
     @ApiModelProperty(value = "状态")
     @TableField("STATUS")
     private String status;
